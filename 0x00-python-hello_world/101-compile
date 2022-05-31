@@ -1,2 +1,3 @@
 #!bin/bash
-python3 $PYFILE > $PYFILEc
+echo "Compiling $PYFILE ..."
+python3 -m compileall -b main.pyc
