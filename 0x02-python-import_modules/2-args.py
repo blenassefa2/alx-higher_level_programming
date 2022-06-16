@@ -2,10 +2,6 @@
 
 if __name__ == "__main__":
 
-    """
-    This takes arguments and does sth with it
-    """
-
     import sys
 
     count = len(sys.argv) - 1
