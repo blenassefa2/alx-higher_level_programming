@@ -1,8 +1,12 @@
 #!/usr/bin/python3
+import hidden_4
 
-if __name__ == "__main__":
-    import sys
-    import hidden_4
-    for n in dir(hidden_4):
-        if n[:2] != "__":
-            print(n)
+i = 0
+
+if __name__ == '__main__':
+    mylist = dir(hidden_4)
+    newlist = sorted(mylist)
+    while i < len(newlist):
+        if newlist[i][0] != '_':
+            print(newlist[i])
+        i += 1
