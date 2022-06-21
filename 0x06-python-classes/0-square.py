@@ -5,9 +5,10 @@ class Square:
     This is an empty class and no description is needed
 
     """
-    def __init__(self):
-        """
-        Note:
-            this is an empty init
-        """
-        pass
+    pass
+#    def __init__(self):
+#        """
+#        Note:
+#           this is an empty init
+#        """
+#       pass
