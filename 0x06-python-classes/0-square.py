@@ -6,9 +6,3 @@ class Square:
 
     """
     pass
-#    def __init__(self):
-#        """
-#        Note:
-#           this is an empty init
-#        """
-#       pass
