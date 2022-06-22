@@ -20,14 +20,19 @@ class Square:
         try:
             self.__position = position
             self.__size = size
+            errr = "position must be a tuple of 2 positive integers"
             if not isinstance(size, int):
                 raise TypeError("size must be an integer")
             if size < 0:
                 raise ValueError("size must be >= 0")
             if len(position) != 2:
-                raise TypeError("position must be a tuple of 2 integers")
-            if not (isinstance(position[0], int) and isinstance(position[1], int)):
-                raise TypeError("position must be a tuple of 2 integers")
+                raise TypeError(err)
+            if not isinstance(position[0], int):
+                raise TypeError(err)
+            if not isinstance(position[1], int):
+                raise TypeError(err)
+            if position[0] < 0 or position[1] < 0:
+                raise TypeError(err)
         except Exception as exception:
             raise exception
 
@@ -80,13 +85,19 @@ class Square:
         """
         try:
             self.__position = value
-            
+
+            err = "position must be a tuple of 2 positive integers"
             if len(position) != 2:
-                raise TypeError("position must be a tuple of 2 integers")
-            if not (isinstance(position[0], int) and isinstance(position[1], int)):
-                raise TypeError("position must be a tuple of 2 integers")
+                raise TypeError(err)
+            if not isinstance(position[0], int):
+                raise TypeError(err)
+            if not isinstance(position[1], int):
+                raise TypeError(err)
+            if position[0] < 0 or position[1] < 0:
+                raise TypeError(error)
         except Exception as exception:
             raise exception
+
     def area(self):
         """
         Calculates the current sqare area
