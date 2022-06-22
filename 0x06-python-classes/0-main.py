@@ -1,50 +1,34 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
-"""Example Google style docstrings.
+Square = __import__('2-square').Square
 
-This module demonstrates documentation as specified by the `Google Python
-Style Guide`_. Docstrings may extend over multiple lines. Sections are created
-with a section header and a colon followed by a block of indented text.
+my_square_1 = Square(3)
+print(type(my_square_1))
+print(my_square_1.__dict__)
 
-Example:
-    Examples can be given using either the ``Example`` or ``Examples``
-    sections. Sections support any reStructuredText formatting, including
-    literal blocks::
-
-        $ python example_google.py
-
-Section breaks are created by resuming unindented text. Section breaks
-are also implicitly created anytime a new section starts.
-
-Attributes:
-    module_level_variable1 (int): Module level variables may be documented in
-        either the ``Attributes`` section of the module docstring, or in an
-        inline docstring immediately following the variable.
-
-        Either form is acceptable, but the two should not be mixed. Choose
-        one convention to document module level variables and be consistent
-        with it.
-
-Todo:
-    * For module TODOs
-    * You have to also use ``sphinx.ext.todo`` extension
-
-.. _Google Python Style Guide:
-   http://google.github.io/styleguide/pyguide.html
-
-"""
-Square = __import__('1-square').Square
-
-my_square = Square(3)
-print(type(my_square))
-print(my_square.__dict__)
+my_square_2 = Square()
+print(type(my_square_2))
+print(my_square_2.__dict__)
 
 try:
-    print(my_square.size)
+    print(my_square_1.size)
 except Exception as e:
     print(e)
 
 try:
-    print(my_square.__size)
+    print(my_square_1.__size)
+except Exception as e:
+    print(e)
+
+try:
+    my_square_3 = Square("3")
+    print(type(my_square_3))
+    print(my_square_3.__dict__)
+except Exception as e:
+    print(e)
+
+try:
+    my_square_4 = Square(-89)
+    print(type(my_square_4))
+    print(my_square_4.__dict__)
 except Exception as e:
     print(e)
