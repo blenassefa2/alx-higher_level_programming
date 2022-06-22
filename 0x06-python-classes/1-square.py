@@ -11,4 +11,4 @@ class Square:
         size : int
             the size of square object
         """
-        self.size = size
+        self.__size = size
