@@ -113,10 +113,9 @@ class Square:
             print()
             return
         a, b = self.__position
-        for x in range(a):
-            print()
+        print("\n" * b)
         for i in range(self.__size):
-            for y in range(b):
+            for y in range(a):
                 print(" ", end="")
             for j in range(self.__size):
                 print("#", end="")
