@@ -86,15 +86,15 @@ class Square:
         try:
             self.__position = value
 
-            err = "position must be a tuple of 2 positive integers"
+            self.err = "position must be a tuple of 2 positive integers"
             if len(position) != 2:
-                raise TypeError(err)
+                raise TypeError(self.err)
             if not isinstance(position[0], int):
-                raise TypeError(err)
+                raise TypeError(self.err)
             if not isinstance(position[1], int):
-                raise TypeError(err)
+                raise TypeError(self.err)
             if position[0] < 0 or position[1] < 0:
-                raise TypeError(err)
+                raise TypeError(self.err)
         except Exception as exception:
             raise exception
 
