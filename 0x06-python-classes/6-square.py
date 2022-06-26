@@ -113,7 +113,7 @@ class Square:
             print()
             return
         a, b = self.__position
-        print("\n" * b)
+        print("\n" * b, end="")
         for i in range(self.__size):
             for y in range(a):
                 print(" ", end="")
