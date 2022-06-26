@@ -94,7 +94,7 @@ class Square:
             if not isinstance(position[1], int):
                 raise TypeError(err)
             if position[0] < 0 or position[1] < 0:
-                raise TypeError(error)
+                raise TypeError(err)
         except Exception as exception:
             raise exception
 
