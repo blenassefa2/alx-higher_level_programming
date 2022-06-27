@@ -107,4 +107,6 @@ class Rectangle:
         Returns:
             perimeter of current object
         """
+        if not self.__height or not self.__width:
+            return 0
         return (2 * self.__height) + (self.__width * 2)
