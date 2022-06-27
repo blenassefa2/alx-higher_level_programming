@@ -120,5 +120,6 @@ class Rectangle:
             s += "#"*self.__width + "\n"
 
         return s[:-1]
+
     def __repr__(self):
         return "Rectangle({}, {})".format(self.__width, self.__height)
