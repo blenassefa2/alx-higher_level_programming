@@ -11,6 +11,10 @@ def matrix_divided(matrix, div):
         Return:
             matrix with divided elements
     """
+    if not isinstance(matrix, list):
+        raise TypeError(
+            'matrix must be a matrix (list of lists)of integers/floats'
+            )
     for m in matrix:
         if not isinstance(m, list):
             raise TypeError(
