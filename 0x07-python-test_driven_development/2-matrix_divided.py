@@ -2,7 +2,7 @@
 """ divides all elements of a matrix """
 
 
-def matrix_divided(*args):
+def matrix_divided(matrix, div):
     """
         divides all elements of a matrix
         Args:
@@ -11,16 +11,6 @@ def matrix_divided(*args):
         Return:
             matrix with divided elements
     """
-    if len(args) > 2 or len(args) < 1:
-        raise TypeError(
-            'matrix must be a matrix (list of lists)of integers/floats'
-            )
-    matirx, div = [], 1
-
-    if len(args) == 1:
-        matrix, div = split(args, "/")
-    else:
-        matrix, div = args
     if not isinstance(matrix, list):
         raise TypeError(
             'matrix must be a matrix (list of lists)of integers/floats'
