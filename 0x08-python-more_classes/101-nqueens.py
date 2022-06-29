@@ -2,24 +2,9 @@
 import sys
 """ This module solves the n-queens problem"""
 
-if len(sys.argv) != 2:
-    print("Usage: nqueens N")
-    exit(1)
 
-N = int(sys.argv[1])
-
-#check if input is valid
-if not isinstance(N, int):
-    print("N must be a number")
-    exit(1)
-if N < 4:
-    print("N must be at least 4")
-    exit(1)
-
-
-#imlement the check function
 def calcpos():
-    """ 
+    """
     calculates all valid positions valid for first row
 
     Args:
@@ -27,11 +12,11 @@ def calcpos():
             the current index
     Return:
         an empty string for invalid position
-        the rest of queens position 
+        the rest of queens position
     """
     final = []
-    ans = []   
-    p_diag = set() 
+    ans = []
+    p_diag = set()
     n_diag = set()
     col = set()
 
@@ -55,8 +40,21 @@ def calcpos():
             p_diag.remove(j + c)
             n_diag.remove(j - c)
             ans.pop()
-    
+
     backtracking(0)
     return final
-calcpos()
 
+
+if len(sys.argv) != 2:
+    print("Usage: nqueens N")
+    exit(1)
+
+N = int(sys.argv[1])
+
+if not isinstance(N, int):
+    print("N must be a number")
+    exit(1)
+if N < 4:
+    print("N must be at least 4")
+    exit(1)
+calcpos()
