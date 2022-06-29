@@ -2,7 +2,7 @@
 """ divides all elements of a matrix """
 
 
-def matrix_divided(matrix, div):
+def matrix_divided(*args):
     """
         divides all elements of a matrix
         Args:
@@ -11,6 +11,16 @@ def matrix_divided(matrix, div):
         Return:
             matrix with divided elements
     """
+    if len(args) > 2 or len(args) < 1:
+        raise TypeError(
+            'matrix must be a matrix (list of lists)of integers/floats'
+            )
+    matirx, div = [], 1
+
+    if len(args) == 1:
+        matrix, div = split(args, "/")
+    else:
+        matrix, div = args
     if not isinstance(matrix, list):
         raise TypeError(
             'matrix must be a matrix (list of lists)of integers/floats'
@@ -23,7 +33,7 @@ def matrix_divided(matrix, div):
     """ if all lists are of the same length """
     it = iter(matrix)
     length = len(next(it))
-    if not all(len(l) == length for l in it):
+    if not all(len(lng) == length for lng in it):
         raise TypeError('Each row of the matrix must have the same size')
     """ checking for list values """
     for lst in matrix:
