@@ -8,6 +8,7 @@ Attributes:
 """
 import sys
 
+
 def calcpos(N):
     """
     calculates all valid positions valid for first row
@@ -58,14 +59,14 @@ def calcpos(N):
 
 
 if len(sys.argv) != 2:
-    print("Usage: nqueens N")
+    print("Usage: nqueens N", file=sys.stderr)
     exit(1)
 
 if not sys.argv[1].isdigit():
-    print("N must be a number")
+    print("N must be a number", file=sys.stderr)
     exit(1)
 n = int(sys.argv[1])
 if n < 4:
-    print("N must be at least 4")
+    print("N must be at least 4", file=sys.stderr)
     exit(1)
 a = calcpos(n)
