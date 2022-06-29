@@ -21,6 +21,14 @@ def calcpos(N):
     col = set()
 
     def backtracking(j):
+        """
+        recursively backtrack
+
+        Args:
+            j : row
+        Return:
+            nothing
+        """
         if j == N:
             print(ans)
             return
