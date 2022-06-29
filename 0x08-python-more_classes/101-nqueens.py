@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-import sys
-""" This module solves the n-queens problem"""
+""" This module solves the n-queens problem
 
+within this module we use backtracking to solve a problem
+
+Attributes:
+    N : a number of size of the square chess board
+"""
+import sys
 
 def calcpos(N):
     """
@@ -56,12 +61,11 @@ if len(sys.argv) != 2:
     print("Usage: nqueens N")
     exit(1)
 
-N = int(sys.argv[1])
-if not isinstance(N, int):
+if not sys.argv[1].isdigit():
     print("N must be a number")
     exit(1)
-n = int(N)
-if N < 4:
+n = int(sys.argv[1])
+if n < 4:
     print("N must be at least 4")
     exit(1)
 a = calcpos(n)
