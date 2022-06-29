@@ -11,10 +11,11 @@ def matrix_divided(matrix, div):
         Return:
             matrix with divided elements
     """
-    if not all(isinstance(matrix, list)):
-        raise TypeError(
-            'matrix must be a matrix (list of lists)of integers/floats'
-             )
+    for m in matrix:
+        if not isinstance(m, list):
+            raise TypeError(
+                'matrix must be a matrix (list of lists)of integers/floats'
+                )
     """ if all lists are of the same length """
     it = iter(matrix)
     length = len(next(it))
