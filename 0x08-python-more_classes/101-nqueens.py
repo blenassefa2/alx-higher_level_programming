@@ -30,11 +30,9 @@ def calcpos():
         the rest of queens position 
     """
     final = []
-    ans = []
-    #build the diagonals and the columns dictionary
+    ans = []   
     p_diag = set() 
     n_diag = set()
-
     col = set()
 
     def backtracking(j):
@@ -57,6 +55,7 @@ def calcpos():
             p_diag.remove(j + c)
             n_diag.remove(j - c)
             ans.pop()
+    
     backtracking(0)
     return final
 calcpos()
