@@ -3,12 +3,12 @@ import sys
 """ This module solves the n-queens problem"""
 
 
-def calcpos():
+def calcpos(N):
     """
     calculates all valid positions valid for first row
 
     Args:
-        x : int
+        N : int
             the current index
     Return:
         an empty string for invalid position
@@ -23,7 +23,6 @@ def calcpos():
     def backtracking(j):
         if j == N:
             print(ans)
-            final.append(ans)
             return
         for c in range(N):
             if c in col or j + c in p_diag or j - c in n_diag:
@@ -50,11 +49,11 @@ if len(sys.argv) != 2:
     exit(1)
 
 N = int(sys.argv[1])
-
 if not isinstance(N, int):
     print("N must be a number")
     exit(1)
+n = int(N)
 if N < 4:
     print("N must be at least 4")
     exit(1)
-calcpos()
+a = calcpos(n)
