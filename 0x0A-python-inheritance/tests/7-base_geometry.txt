@@ -28,6 +28,11 @@ Numbers:
 	Traceback (most recent call last):
 	ValueError: number must be greater than 0
 
+:: With negative 0 as second argument
+	>>> bg.integer_validator("number", 0)
+	Traceback (most recent call last):
+	ValueError: number must be greater than 0
+
 :: With string number as second argument
 	>>> bg.integer_validator("age", '34')
 	Traceback (most recent call last):
