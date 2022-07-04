@@ -13,14 +13,17 @@ Numbers:
 
 ''area()'' returns exception saying it is not implemented
 
-:: Call area
+:: Call area exception
 	>>> bg.area()
 	Traceback (most recent call last):
 	Exception: area() is not implemented
 
 ''integer_validator()'' returns True if a num is integer.
 
-:: Correct arguments
+Correct arguments
+	>>> bg.integer_validator("abcd", 123)
+
+:: With positive second argument
 	>>> bg.integer_validator("age", 12)
 
 :: With negative integer as second argument
