@@ -20,7 +20,7 @@ Numbers:
 
 ''integer_validator()'' returns True if a num is integer.
 
-:: With positive integer as second argument
+:: Correct arguments
 	>>> bg.integer_validator("age", 12)
 
 :: With negative integer as second argument
@@ -63,8 +63,18 @@ Numbers:
 	Traceback (most recent call last):
 	TypeError: age must be an integer
 
-:: With none as second argument
-	>>> bg.integer_validator("age", None)
+:: With tuple as second argument
+	>>> bg.integer_validator("age", (4,))
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+:: With list as second argument
+	>>> bg.integer_validator("age", [4])
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+:: With set as second argument
+	>>> bg.integer_validator("age", {3, 5})
 	Traceback (most recent call last):
 	TypeError: age must be an integer
 
