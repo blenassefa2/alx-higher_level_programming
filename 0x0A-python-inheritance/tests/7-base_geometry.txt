@@ -71,6 +71,16 @@ Correct arguments
 	Traceback (most recent call last):
 	TypeError: age must be an integer
 
+:: With tuple as second argument
+	>>> bg.integer_validator("age", ())
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+:: With tuple as second argument
+	>>> bg.integer_validator("age", (4, 6))
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
 :: With list as second argument
 	>>> bg.integer_validator("age", [4])
 	Traceback (most recent call last):
