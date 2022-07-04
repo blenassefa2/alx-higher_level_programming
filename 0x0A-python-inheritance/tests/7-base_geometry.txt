@@ -1,0 +1,54 @@
+=============================
+How to use 7-base_geometry.py
+=============================
+
+This module defines a class called BaseGeometry which has two methods 
+called ''area()'' and ''integer_validator()''.
+
+Numbers:
+========
+:: Importing the module
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> bg = BaseGeometry()
+
+''area()'' returns exception saying it is not implemented
+
+:: Call area
+	>>> bg.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+''integer_validator()'' returns True if a num is integer.
+
+:: With positive integer as second argument
+	>>> bg.integer_validator("age", 12)
+
+:: With negative integer as second argument
+	>>> bg.integer_validator("number", -34)
+	Traceback (most recent call last):
+	ValueError: number must be greater than 0
+
+:: With string as second argument
+	>>> bg.integer_validator("age", '34')
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+:: No arguments
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+:: One argument
+	>>> bg.integer_validator('name')
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+:: Extra arguments
+	>>> bg.integer_validator('name', 34, 'extra')
+	Traceback (most recent call last):
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+:: Module docstring
+	>>> doc = BaseGeometry = __import__('7-base_geometry').__doc__
+	>>> len(doc) > 1
+	True

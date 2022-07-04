@@ -1,0 +1,6 @@
+=============================
+How to use 7-base_geometry.py
+=============================
+
+This module defines class BaseGeometry
+
