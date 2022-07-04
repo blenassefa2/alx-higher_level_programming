@@ -13,7 +13,15 @@ class BaseGeometry:
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """a public instance method
+        """
+        A public instance method
+
+        Args:
+            name : string
+                name of variable
+            value : int
+                integer to be validated
+
         Raises:
             TypeError - <name> must be an integer
             ValueError - <name> must be greater than 0
@@ -28,10 +36,11 @@ class Rectangle(BaseGeometry):
     """class that inherits BaseGeometry class"""
 
     def __init__(self, width, height):
-        """Initializes the class
+        """
+        Initializes the class
 
-        Parameters:
-        ----------
+        Parameters
+        ---------
             width : int
                 width of rectangle
             height : int
