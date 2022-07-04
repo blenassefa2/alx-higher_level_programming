@@ -28,8 +28,38 @@ Numbers:
 	Traceback (most recent call last):
 	ValueError: number must be greater than 0
 
-:: With string as second argument
+:: With string number as second argument
 	>>> bg.integer_validator("age", '34')
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+:: With string as second argument
+	>>> bg.integer_validator("age", 'yes')
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+:: With boolean as second argument
+	>>> bg.integer_validator("age", True)
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+:: With decimal as second argument
+	>>> bg.integer_validator("age", 7.3)
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+:: With infinity as second argument
+	>>> bg.integer_validator("age", float('inf'))
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+:: With nan as second argument
+	>>> bg.integer_validator("age", float('nan'))
+	Traceback (most recent call last):
+	TypeError: age must be an integer
+
+:: With none as second argument
+	>>> bg.integer_validator("age", None)
 	Traceback (most recent call last):
 	TypeError: age must be an integer
 
