@@ -54,7 +54,7 @@ class Rectangle(BaseGeometry):
     def area(self):
         """implementation of the method from inherited class"""
 
-        return self.__width * self__height
+        return self.__width * self.__height
 
     def __str__(self):
         """makes the class printable"""
