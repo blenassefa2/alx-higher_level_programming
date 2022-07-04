@@ -2,7 +2,35 @@
 """module that defines Rectangle"""
 
 
-BaseGeometry = __import__('7-base_geometry').__BaseGeometry
+class BaseGeometry:
+    """a class with unimplemented method"""
+
+    def area(self):
+        """a public instance method
+        Raises:
+            Exception - area() is not implemented
+        """
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name, value):
+        """
+        A public instance method
+
+        Args:
+            name : string
+                name of variable
+            value : int
+                integer to be validated
+
+        Raises:
+            TypeError - <name> must be an integer
+            ValueError - <name> must be greater than 0
+        """
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
+
 
 class Rectangle(BaseGeometry):
     """class that inherits BaseGeometry class"""
