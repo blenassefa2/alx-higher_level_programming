@@ -76,8 +76,8 @@ Correct arguments
 	Traceback (most recent call last):
 	TypeError: age must be an integer
 
-:: With tuple as second argument
-	>>> bg.integer_validator("age", {"a": 7})
+:: With None as second argument
+	>>> bg.integer_validator("age", None)
 	Traceback (most recent call last):
 	TypeError: age must be an integer
 
