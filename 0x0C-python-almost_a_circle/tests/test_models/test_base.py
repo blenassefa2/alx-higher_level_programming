@@ -1,24 +1,26 @@
 #!/usr/bin/python3
+import os
+import json
 import unittest
 from models.base import Base
-
+from models.rectangle import Rectangle
+from models.square import Square
 
 class TestBase_instantiation(unittest.TestCase):
-    """ Unit tests for testing instantiation of my first class called Base"""
+    """ Unit tests for testing instantiation of the Base class """
 
     def test_no_arg(self):
         b1 = Base()
         b2 = Base()
         self.assertEqual(b1.id, b2.id - 1)
 
-    def test_3_bases(self):
+    def test_three_bases(self):
         b1 = Base()
         b2 = Base()
         b3 = Base()
-        self.assertEqual(b2.id, b3.id - 1)
-        self.assertEqual(b1.id, b2.id - 1)
+        self.assertEqual(b1.id, b3.id - 2)
 
-    def test_id_initialization(self):
+    def test_id_automatically(self):
         b1 = Base()
         b2 = Base()
         b3 = Base()
@@ -30,17 +32,18 @@ class TestBase_instantiation(unittest.TestCase):
         self.assertTrue(b4, self.id == 12)
         self.assertTrue(b5, self.id == 4)
 
-    def test_2_id(self):
+    def test_1_id(self):
         Base._Base__nb_objects = 0
         base = Base()
         self.assertEqual(base.id, 1)
+
         b1 = Base(100)
         self.assertEqual(b1.id, 100)
         b2 = Base(-100)
         self.assertEqual(b2.id, -100)
         b3 = Base()
         self.assertEqual(b3.id, 2)
-    
+
     def test_to_json_string(self):
         dic1 = {'id': 1, 'width': 10, 'height': 7, 'x': 2, 'y': 8}
         dic2 = {'id': 6, 'width': 7, 'height': 8, 'x': 9, 'y': 10}
