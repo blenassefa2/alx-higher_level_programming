@@ -1,34 +1,18 @@
 #!/usr/bin/python3
-""" ℹ️
-    takes in the name of a state as an argument
-    and lists all cities of that state,
-    using the database hbtn_0e_4_usa
-"""
+"""  lists all states from the database hbtn_0e_0_usa """
+import MySQLdb
+import sys
 
 
 if __name__ == "__main__":
-
-    import sys
-    import MySQLdb
-
-    user_name = sys.argv[1]
-    passw = sys.argv[2]
-    data_base = sys.argv[3]
-    word = sys.argv[4]
-
-    db = MySQLdb.connect(host="localhost", port=3306, user=user_name,
-                         passwd=passw, db=data_base)
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cur = db.cursor()
-    cur.execute("SELECT city.name FROM states as state\
-                join cities as city ON state.id = city.state_id\
-                where state.name =%s", (word,))
+    cur.execute("""SELECT cities.name FROM
+                cities INNER JOIN states ON states.id=cities.state_id
+                WHERE states.name=%s""", (sys.argv[4],))
     rows = cur.fetchall()
-    i = 0
-    for row in rows:
-        if i != 0:
-            print(", ", end="")
-        print(row[0], end="")
-        i += 1
-    print()
+    tmp = list(row[0] for row in rows)
+    print(*tmp, sep=", ")
     cur.close()
     db.close()
